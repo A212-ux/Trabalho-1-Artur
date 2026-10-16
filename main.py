@@ -17,4 +17,6 @@ def carregar_dados():
         return ativos
     
     with open(ARQUIVO_DADOS)
+# Comentário    
+
 
