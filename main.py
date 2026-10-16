@@ -20,7 +20,7 @@ def carregar_dados():
         for linha in f:
             partes = linha.strip().split(";")
             if len(partes) >= 6:
-                ativos_id = int(partes[0])
+                ativo_id = int(partes[0])
                 ativos[ativo_id] = {
                     "id": ativo_id,
                     "hostname": partes[1],
@@ -89,7 +89,7 @@ def consultar_ativos(ativos):
     encontrados = []
     for ativo in ativos.values():
         if not busca or str(ativo["id"]) == busca or busca.lower() in ativo["hostname"].lower():
-            encontrads.append(ativo)
+            encontrados.append(ativo)
 
     if not encontrados:
         print("Nenhum ativo encontrado.")
@@ -178,13 +178,16 @@ def adicionar_vulnerabilidades(ativos):
     salvar_dados(ativos)
     print("Vulnerabilidade associada com sucesso!")
 
-# Menu textual principal com tratamneto de erros
+# Menu textual principal com tratamento de erros
 def main():
     ativos = carregar_dados()
     while True:
         print("\n==============================================")
         print("   SISTEMA DE INVENTÁRIO DE CIBERSEGURANÇA    ")
         print("==============================================")
+# Mostra dinamicamente quantos ativos estão cadastrados na base
+        print(f" Status da Base: {len(ativos)} ativo(s) cadastrado(s)")
+        print("----------------------------------------------")
         print("1. Cadastrar Ativo")
         print("2. Consultar Ativos e Vulnerabilidades")
         print("3. Atualizar Ativo")
@@ -203,13 +206,12 @@ def main():
         elif opcao == "4":
             deletar_ativo(ativos)
         elif opcao == "5":
-            adicionar_vulnerabilidade(ativos)
+            adicionar_vulnerabilidades(ativos)
         elif opcao == "6":
-            print("Saindo do sistema. Bom trabalho na apresentação!")
+            print("Saindo do sistema!")
             break
         else:
             print("Opção inválida! Escolha um número de 1 a 6.")
 
 if __name__ == "__main__":
     main()
-# Final do trabalho
