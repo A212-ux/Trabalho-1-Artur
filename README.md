@@ -1,1 +1,2 @@
 # Trabalho-1-Artur
+Trabalho-1-Artur curso de Cibersegurança de 2026 aluno Artur, Desenvolvi uma aplicação em Python para inventário de TI com CRUD completo de ativos e gestão de vulnerabilidades. Utilizei Enum para padronizar os 4 tipos de ativos, dicionário por ID para buscas eficientes e salvamento automático em arquivo de texto. Na branch(desenvolvimento) cadastrada mostra dinamicamente quantos ativos estão cadastrados na base.
