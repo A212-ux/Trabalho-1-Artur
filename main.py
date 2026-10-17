@@ -213,5 +213,5 @@ def main():
         else:
             print("Opção inválida! Escolha um número de 1 a 6.")
 
-if __name__ == "__main__":
+if __name__ == "__main__":# teste1
     main()
