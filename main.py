@@ -32,7 +32,7 @@ def carregar_dados():
     return ativos
 
 def salvar_dados(ativos):
-    with open(ARQUIVO_DADOS, "w", encoding="uft-8") as f:
+    with open(ARQUIVO_DADOS, "w", encoding="utf-8") as f:
         for ativo in ativos.values():
             linha = f"{ativo['id']};{ativo['hostname']};{ativo['responsavel']};{ativo['setor']};{ativo['tipo']};{ativo['vulnerabilidades']}\n"
             f.write(linha)
