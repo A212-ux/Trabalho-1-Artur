@@ -1,6 +1,7 @@
 class App:
     def __init__(self):
 
+
     ativos = carregar_dados()
     while True:
         print("\n==============================================")
@@ -16,7 +17,7 @@ class App:
         print("5. Adicionar Vulnerabilidade a um Ativo")
         print("6. Sair")
 
-        opcao = input("Escolha uma opção: ").strip()
+        opcao = validar_input("Escolha uma opção: ")
 
         if opcao == "1":
             cadastrar_ativo(ativos)
@@ -34,17 +35,23 @@ class App:
         else:
             print("Opção inválida! Escolha um número de 1 a 6.")
 
+        def validar_input(mensagem):
+            valor = input(mensagem).strip()
+            return valor if valor.isdigit() else ""
+
     class Create:
         def __init__(self, hostname, responsavel, setor):
             self.hostname = hostname
             self.responsavel = responsavel
             self.setor = setor
+            print(f"{self.hostname}, {self.responsavel}, {self.setor}")
 
     class Vulnerabilidades:
         def __init__(self, descricao, severidade, status):
             self.descricao = descricao
             self.severidade = severidade
             self.status = status
+            print(f"{self.descricao}, {self.severidade}, {self.status}")
 
 if __name__ == "__main__":
     main()
